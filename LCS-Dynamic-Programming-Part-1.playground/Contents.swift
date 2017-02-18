@@ -79,15 +79,11 @@ struct MemorizationTable<T: Equatable> {
 
 ////////////////////////
 ////// TEST with string
-let a = "acbaed".characters.map { char -> String in
-    return String(char)
-}
-let b = "abcadfa".characters.map { char -> String in
-    return String(char)
-}
-let lcs = a.LCS(b) // ["a", "b", "a", "d"]
+let a = "acbaed".characters.map {String($0)}
+let b = "abcadfa".characters.map {String($0)}
 
-
+let lcs = a.LCS(b) //
+print(lcs) //  ["a", "b", "a", "d"]
 
 //////////////////////////
 // Test with custom model
@@ -106,9 +102,15 @@ extension UserObj: Equatable {
     }
 }
 
-let localUsers = [UserObj(name: "Nghia Tran"), UserObj(name: "nghiatran.me"), UserObj(name: "SaiGon"), UserObj(name: "Algorithm")]
-let remoteUsers = [UserObj(name: "Kamakura"), UserObj(name: "Nghia Tran"), UserObj(name: "Algorithm"), UserObj(name: "SaiGon"), UserObj(name: "Somewhere")]
+let localUsers = [UserObj(name: "Nghia Tran"),
+                  UserObj(name: "nghiatran.me"),
+                  UserObj(name: "SaiGon"),
+                  UserObj(name: "Algorithm")]
+let remoteUsers = [UserObj(name: "Kamakura"),
+                   UserObj(name: "Nghia Tran"),
+                   UserObj(name: "Algorithm"),
+                   UserObj(name: "SaiGon"),
+                   UserObj(name: "Somewhere")]
 
-// LCS
 let lcsUser = localUsers.LCS(remoteUsers)
-print(lcsUser) // "[{Nghia Tran}, {Algorithm}]"
+print(lcsUser) // [{Nghia Tran}, {Algorithm}]
