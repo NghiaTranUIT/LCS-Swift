@@ -48,3 +48,11 @@ print(LCS(a, b))
 let x = "😇🙌😉💰🎹"
 let y = "🙌🍒💰✈️🎹😎🔴"
 print(LCS(x, y))
+
+extension String {
+    func `subscript`(range: ClosedRange) -> String {
+        return "abc"
+    }
+}
+
+let sub = a[0..1]
