@@ -97,7 +97,7 @@ extension DiffTransform: CustomStringConvertible, CustomDebugStringConvertible {
 }
 
 // Diff Container
-struct Diff<T> {
+struct Diff<T>: CustomStringConvertible {
     
     typealias Element = DiffTransform<T>
     
@@ -109,12 +109,12 @@ struct Diff<T> {
     
     // Insert
     var insertion: [Element] {
-        return self.result.filter({ $0.isInsertion })
+        return self.result.filter({ $0.isInsertion }).sorted(by: { $0.index < $1.index })
     }
     
     // Deletion
     var deletion: [Element] {
-        return self.result.filter({ $0.isDeletion })
+        return self.result.filter({ $0.isDeletion }).sorted(by: { $0.index > $1.index })
     }
     
     // Reload
@@ -125,7 +125,12 @@ struct Diff<T> {
     mutating func append(item: Element) {
         self._result.append(item)
     }
+    
+    var description: String {
+        return "\(self.result)"
+    }
 }
+
 
 func +<T> ( left: Diff<T>, right: DiffTransform<T>) -> Diff<T> {
     var left = left
@@ -186,15 +191,99 @@ extension Array where Element: Equatable {
         else if j == 0 { // Delete
             return diffFromMemorizationTable(table, x, y, i-1, j) + DiffTransform.delete(i-1, x[i-1])
         }
-        else if table[i][j] == table[i-1][j] { // Insert
-            return diffFromMemorizationTable(table, x, y, i, j-1) + DiffTransform.insert(j-1, y[j-1])
-        }
-        else if table[i][j] == table[i][j-1] { // Delete
+        else if table[i][j] == table[i-1][j] { // Delete
             return diffFromMemorizationTable(table, x, y, i-1, j) + DiffTransform.delete(i-1, x[i-1])
+        }
+        else if table[i][j] == table[i][j-1] { // Insert
+            return diffFromMemorizationTable(table, x, y, i, j-1) + DiffTransform.insert(j-1, y[j-1])
         }
         else { // Reload
             return diffFromMemorizationTable(table, x, y, i-1, j-1) + DiffTransform.reload(i-1, x[i-1])
         }
     }
+    
+    // Apply Diff
+    func apply(_ diff: Diff<Element>) -> [Element] {
+        var copy = self
+        
+        // Delete first
+        for delete in diff.deletion {
+            copy.remove(at: delete.index)
+        }
+        
+        // Insert
+        for insert in diff.insertion {
+            copy.insert(insert.value, at: insert.index)
+        }
+        
+        return copy
+    }
 }
 
+
+// Test
+let a = ["A", "D", "F", "G", "T"]
+let b = ["A", "F", "O", "X", "T"]
+let diff = a.diff(b)
+let c = a.apply(diff)
+print(c)
+
+// UITable View Integration
+struct DiffCalculator<T: Equatable> {
+    
+    // Weak table view
+    weak var tableView: UITableView?
+    
+    // Data
+    private var _data: [T] = []
+    var data: [T] {
+        get {return self._data}
+        set {
+            let old = self._data
+            let diff = old.diff(newValue)
+            
+            // Set
+            self._data = newValue
+            
+            // Transform
+            self.applyTransform(with: diff)
+        }
+    }
+    //
+    // MARK: - Init
+    init(tableView: UITableView, data: [T]) {
+        self.tableView = tableView
+        self._data = data
+    }
+    
+    // Apply Transfrom
+    fileprivate func applyTransform<T: Equatable>(with diff: Diff<T>) {
+        
+        // Update transform
+        guard diff.result.count > 0 else {return}
+        guard let tableView = self.tableView else {return}
+        
+        tableView.beginUpdates()
+        
+        // Map indexPath
+        let insertion = diff.insertion.map({ IndexPath(row: $0.index, section: 0) })
+        let deletion = diff.deletion.map({ IndexPath(row: $0.index, section: 0) })
+        let reload = diff.reload.map({ IndexPath(row: $0.index, section: 0) })
+        
+        // Delete
+        tableView.deleteRows(at: insertion, with: .automatic)
+        tableView.insertRows(at: deletion, with: .automatic)
+        tableView.reloadRows(at: reload, with: .automatic)
+        
+        tableView.endUpdates()
+    }
+}
+
+// Example
+let tableView = UITableView()
+let data = ["Nghia Tran", "nghiatran.me", "Saigon", "Singapore", "Bangkok"]
+var diffCalculator = DiffCalculator<String>(tableView: tableView, data: data)
+
+// Pull to refresh with new data
+let newData = ["Nghia Tran", "Uni", "nghiatran.me", "Ha Noi", "KL", "Singapore", "Bangkok", "Finland"]
+diffCalculator.data = newData
