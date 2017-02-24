@@ -12,6 +12,9 @@
 		BA8228861E5FFE7000E465AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8228841E5FFE7000E465AC /* Main.storyboard */; };
 		BA8228881E5FFE7000E465AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA8228871E5FFE7000E465AC /* Assets.xcassets */; };
 		BA82288B1E5FFE7000E465AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8228891E5FFE7000E465AC /* LaunchScreen.storyboard */; };
+		BA8228941E5FFF1900E465AC /* DiffTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8228931E5FFF1900E465AC /* DiffTransform.swift */; };
+		BA8228961E5FFF2800E465AC /* DiffCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8228951E5FFF2800E465AC /* DiffCalculator.swift */; };
+		BA82289B1E5FFF7F00E465AC /* Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82289A1E5FFF7F00E465AC /* Diff.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		BA8228871E5FFE7000E465AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA82288A1E5FFE7000E465AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA82288C1E5FFE7000E465AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA8228931E5FFF1900E465AC /* DiffTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffTransform.swift; sourceTree = "<group>"; };
+		BA8228951E5FFF2800E465AC /* DiffCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffCalculator.swift; sourceTree = "<group>"; };
+		BA82289A1E5FFF7F00E465AC /* Diff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diff.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 		BA82287F1E5FFE7000E465AC /* Diff */ = {
 			isa = PBXGroup;
 			children = (
+				BA8228921E5FFE8500E465AC /* Diff */,
 				BA8228801E5FFE7000E465AC /* AppDelegate.swift */,
 				BA8228821E5FFE7000E465AC /* ViewController.swift */,
 				BA8228841E5FFE7000E465AC /* Main.storyboard */,
@@ -62,6 +69,16 @@
 				BA82288C1E5FFE7000E465AC /* Info.plist */,
 			);
 			path = Diff;
+			sourceTree = "<group>";
+		};
+		BA8228921E5FFE8500E465AC /* Diff */ = {
+			isa = PBXGroup;
+			children = (
+				BA8228951E5FFF2800E465AC /* DiffCalculator.swift */,
+				BA8228931E5FFF1900E465AC /* DiffTransform.swift */,
+				BA82289A1E5FFF7F00E465AC /* Diff.swift */,
+			);
+			name = Diff;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA82289B1E5FFF7F00E465AC /* Diff.swift in Sources */,
 				BA8228831E5FFE7000E465AC /* ViewController.swift in Sources */,
+				BA8228961E5FFF2800E465AC /* DiffCalculator.swift in Sources */,
+				BA8228941E5FFF1900E465AC /* DiffTransform.swift in Sources */,
 				BA8228811E5FFE7000E465AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
