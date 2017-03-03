@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  ManualReloadViewController.swift
 //  Diff
 //
-//  Created by Nghia Tran on 2/24/17.
+//  Created by Nghia Tran on 3/3/17.
 //  Copyright © 2017 nghiatran. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class ManualReloadViewController: UIViewController {
 
     //
     // MARK: - Variable
@@ -35,13 +35,12 @@ class ViewController: UIViewController {
     
     @IBAction func refreshBtnTapped(_ sender: Any) {
         
-        // 
         self.feedObjs = FeedObj.pullNewLargeDataSource()
         self.tableView.reloadData()
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ManualReloadViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

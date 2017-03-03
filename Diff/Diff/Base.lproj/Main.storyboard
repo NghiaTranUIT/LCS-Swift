@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="37q-gq-2E7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3Q7-jp-cWD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,17 +12,17 @@
         <!--Feed screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Feed screen" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Diff" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Feed screen" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ReloadDataViewController" customModule="Diff" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kQg-cp-GM4">
-                                <rect key="frame" x="0.0" y="64" width="375" height="539"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -49,12 +49,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1508" y="-28"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Reload-->
         <scene sceneID="qF0-Sy-lfE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="37q-gq-2E7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Reload" id="04B-nq-dEq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CDw-tV-kaZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -67,7 +68,148 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Bd-Bt-vUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="792.95352323838085"/>
+            <point key="canvasLocation" x="791" y="-28"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="PV8-ib-V9T">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3Q7-jp-cWD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Tas-I8-mbY">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="37q-gq-2E7" kind="relationship" relationship="viewControllers" id="UcD-cs-sgm"/>
+                        <segue destination="CAO-gw-EMr" kind="relationship" relationship="viewControllers" id="Uem-wf-OTG"/>
+                        <segue destination="Zcb-aN-tgP" kind="relationship" relationship="viewControllers" id="9Nl-Qd-INF"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uNd-9O-Oc1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2" y="795"/>
+        </scene>
+        <!--Feed screen-->
+        <scene sceneID="pQa-me-lzw">
+            <objects>
+                <viewController title="Feed screen" automaticallyAdjustsScrollViewInsets="NO" id="9uu-XQ-G93" customClass="ManualReloadViewController" customModule="Diff" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dIK-08-vmp"/>
+                        <viewControllerLayoutGuide type="bottom" id="nqK-DV-APl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bwL-zV-hN7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cQg-lz-kqD">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cQg-lz-kqD" firstAttribute="leading" secondItem="bwL-zV-hN7" secondAttribute="leading" id="DM3-I4-e1A"/>
+                            <constraint firstItem="nqK-DV-APl" firstAttribute="top" secondItem="cQg-lz-kqD" secondAttribute="bottom" id="FXJ-aB-fry"/>
+                            <constraint firstAttribute="trailing" secondItem="cQg-lz-kqD" secondAttribute="trailing" id="KUz-5p-iGr"/>
+                            <constraint firstItem="cQg-lz-kqD" firstAttribute="top" secondItem="dIK-08-vmp" secondAttribute="bottom" id="g7F-bZ-EYV"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="Feed" id="lN8-Xi-R5F">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="eh4-oU-59e">
+                            <connections>
+                                <action selector="refreshBtnTapped:" destination="9uu-XQ-G93" id="x03-bb-1ci"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="refreshBtn" destination="eh4-oU-59e" id="ENJ-9J-OAe"/>
+                        <outlet property="tableView" destination="cQg-lz-kqD" id="o8e-VA-1Rh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Apc-lN-qVu" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508" y="685"/>
+        </scene>
+        <!--Manual-->
+        <scene sceneID="8Oe-bh-2nE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CAO-gw-EMr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Manual" id="HAd-Lo-UjK"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Zu-2o-G8L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9uu-XQ-G93" kind="relationship" relationship="rootViewController" id="tBc-OI-8wr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSa-60-7az" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="790" y="685"/>
+        </scene>
+        <!--Feed screen-->
+        <scene sceneID="yur-LG-g3a">
+            <objects>
+                <viewController title="Feed screen" automaticallyAdjustsScrollViewInsets="NO" id="FSQ-3m-TYE" customClass="DiffViewController" customModule="Diff" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pno-9O-Caq"/>
+                        <viewControllerLayoutGuide type="bottom" id="gLt-sn-htq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WnR-dk-GVB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BqJ-MK-k55">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BqJ-MK-k55" firstAttribute="top" secondItem="pno-9O-Caq" secondAttribute="bottom" id="Eo5-Dk-Vhj"/>
+                            <constraint firstItem="BqJ-MK-k55" firstAttribute="leading" secondItem="WnR-dk-GVB" secondAttribute="leading" id="MsG-8T-bAo"/>
+                            <constraint firstItem="gLt-sn-htq" firstAttribute="top" secondItem="BqJ-MK-k55" secondAttribute="bottom" id="UIB-cc-61I"/>
+                            <constraint firstAttribute="trailing" secondItem="BqJ-MK-k55" secondAttribute="trailing" id="nyj-BT-nae"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="Feed" id="LXA-vA-Teh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="rGY-Pg-Yb7">
+                            <connections>
+                                <action selector="refreshBtnTapped:" destination="FSQ-3m-TYE" id="syG-wg-O6d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="refreshBtn" destination="rGY-Pg-Yb7" id="41W-Us-MTi"/>
+                        <outlet property="tableView" destination="BqJ-MK-k55" id="iU1-Wj-JxX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Kf-kA-g4j" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508" y="1406"/>
+        </scene>
+        <!--Diff-->
+        <scene sceneID="mxX-3B-k64">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zcb-aN-tgP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Diff" id="Dhc-WH-efU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nnl-fS-34O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FSQ-3m-TYE" kind="relationship" relationship="rootViewController" id="7g2-WR-pj1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="opJ-Es-GQz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="790" y="1406"/>
         </scene>
     </scenes>
 </document>
