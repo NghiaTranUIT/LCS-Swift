@@ -19,12 +19,12 @@ class ItemCell: UICollectionViewCell {
 
     func configureCell(imageName: String) {
         
-        // My Purpose
-        // Don't Cache image in memory
-        // Just make it complex to render -> Easier to analytic in Instrustment
-        let path = Bundle.main.path(forResource: imageName, ofType: "jpg")!
-        let image = UIImage(contentsOfFile: path)
-        
-        self.imageView.image = image
+// My Purpose
+// Don't Cache image in memory
+// Just make it complex to render -> Easier to analytic in Instrustment
+let path = Bundle.main.path(forResource: imageName, ofType: "jpg")!
+let image = UIImage(contentsOfFile: path)
+
+self.imageView.image = image
     }
 }

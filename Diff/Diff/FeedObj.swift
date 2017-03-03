@@ -9,11 +9,17 @@
 import Foundation
 import UIKit
 
-struct FeedObj {
+class FeedObj {
     
     var title: String!
     var content: String!
     var images: [String] = []
+    
+    init(title: String, content: String, images: [String]) {
+        self.title = title
+        self.content = content
+        self.images = images
+    }
 }
 
 extension FeedObj {
@@ -21,7 +27,7 @@ extension FeedObj {
     static func reallyLargeDataSource() -> [FeedObj] {
         
         var arr: [FeedObj] = []
-        for _ in 0..<20 {
+        for _ in 0..<10 {
             let smallDatas = self.initialData()
             arr = arr + smallDatas
         }
@@ -30,7 +36,7 @@ extension FeedObj {
     
     static func pullNewLargeDataSource() -> [FeedObj] {
         var arr: [FeedObj] = []
-        for _ in 0..<20 {
+        for _ in 0..<30 {
             let smallDatas = self.ramdomNewData()
             arr = arr + smallDatas
         }
@@ -43,5 +49,11 @@ extension FeedObj {
     
     private static func ramdomNewData() -> [FeedObj] {
         return [data_1, data_4, data_5, data_6, data_3, data_9, data_2]
+    }
+}
+
+extension FeedObj: Equatable {
+    public static func ==(lhs: FeedObj, rhs: FeedObj) -> Bool {
+        return lhs.title == rhs.title
     }
 }

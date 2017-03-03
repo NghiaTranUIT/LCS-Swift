@@ -35,8 +35,23 @@ class ManualReloadViewController: UIViewController {
     
     @IBAction func refreshBtnTapped(_ sender: Any) {
         
-        self.feedObjs = FeedObj.pullNewLargeDataSource()
-        self.tableView.reloadData()
+        let newData = FeedObj.pullNewLargeDataSource()
+        
+        /*
+        // How we calculate ???
+         
+        let initalData = [data_1, data_2, data_3, data_4, data_5, data_6, data_7, data_8, data_9, data_10]
+        let newData = [data_1, data_4, data_5, data_6, data_3, data_9, data_2]
+         
+        */
+        let insertIndexPaths: [IndexPath] = []
+        let deleteIndexPaths: [IndexPath] = []
+        
+        // 
+        self.tableView.beginUpdates()
+        self.tableView.insertRows(at: insertIndexPaths, with: UITableViewRowAnimation.none)
+        self.tableView.deleteRows(at: deleteIndexPaths, with: UITableViewRowAnimation.none)
+        self.tableView.endUpdates()
     }
 }
 

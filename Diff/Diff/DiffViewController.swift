@@ -13,6 +13,7 @@ class DiffViewController: UIViewController {
 
     //
     // MARK: - Variable
+    fileprivate var diffCalculator: DiffCalculator<FeedObj>!
     fileprivate var feedObjs: [FeedObj] = FeedObj.reallyLargeDataSource()
     
     //
@@ -32,12 +33,18 @@ class DiffViewController: UIViewController {
         self.tableView.tableFooterView = UIView()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        // Diff 
+        self.diffCalculator = DiffCalculator<FeedObj>(tableView: self.tableView, data: self.feedObjs)
     }
     
     @IBAction func refreshBtnTapped(_ sender: Any) {
         
-        self.feedObjs = FeedObj.pullNewLargeDataSource()
-        self.tableView.reloadData()
+        let newData = FeedObj.pullNewLargeDataSource()
+        self.feedObjs = newData
+        
+        // Make Dif and reload
+        self.diffCalculator.data = newData
     }
 
 }

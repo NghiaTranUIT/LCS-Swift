@@ -43,6 +43,8 @@ struct DiffCalculator<T: Equatable> {
         guard diff.result.count > 0 else {return}
         guard let tableView = self.tableView else {return}
         
+        print("Diff = \(diff)")
+        
         tableView.beginUpdates()
         
         // Map indexPath
@@ -51,8 +53,8 @@ struct DiffCalculator<T: Equatable> {
         let reload = diff.reload.map({ IndexPath(row: $0.index, section: 0) })
         
         // Delete
-        tableView.deleteRows(at: insertion, with: .automatic)
-        tableView.insertRows(at: deletion, with: .automatic)
+        tableView.deleteRows(at: deletion, with: .automatic)
+        tableView.insertRows(at: insertion, with: .automatic)
         tableView.reloadRows(at: reload, with: .automatic)
         
         tableView.endUpdates()
