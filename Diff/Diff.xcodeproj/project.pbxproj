@@ -10,6 +10,19 @@
 		BA3F02D21E695B9800D070AC /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F02D11E695B9800D070AC /* SampleData.swift */; };
 		BA3F02D51E6960D900D070AC /* ManualReloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F02D41E6960D900D070AC /* ManualReloadViewController.swift */; };
 		BA3F02D71E6960E500D070AC /* DiffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F02D61E6960E500D070AC /* DiffViewController.swift */; };
+		BA3F02DB1E69625900D070AC /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F02D91E69625900D070AC /* ItemCell.swift */; };
+		BA3F02DC1E69625900D070AC /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA3F02DA1E69625900D070AC /* ItemCell.xib */; };
+		BA3F02E81E69664600D070AC /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA3F02DD1E69664600D070AC /* 1.jpg */; };
+		BA3F02E91E69664600D070AC /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA3F02DE1E69664600D070AC /* 2.jpg */; };
+		BA3F02EA1E69664600D070AC /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA3F02DF1E69664600D070AC /* 3.jpg */; };
+		BA3F02EB1E69664600D070AC /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA3F02E01E69664600D070AC /* 4.jpg */; };
+		BA3F02EC1E69664600D070AC /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA3F02E11E69664600D070AC /* 5.jpg */; };
+		BA3F02ED1E69664600D070AC /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA3F02E21E69664600D070AC /* 6.jpg */; };
+		BA3F02EE1E69664600D070AC /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA3F02E31E69664600D070AC /* 7.jpg */; };
+		BA3F02EF1E69664600D070AC /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA3F02E41E69664600D070AC /* 8.jpg */; };
+		BA3F02F01E69664600D070AC /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA3F02E51E69664600D070AC /* 9.jpg */; };
+		BA3F02F11E69664600D070AC /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA3F02E61E69664600D070AC /* 10.jpg */; };
+		BA3F02F21E69664600D070AC /* 11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA3F02E71E69664600D070AC /* 11.jpg */; };
 		BA4C17741E616E7300F28591 /* FeedObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C17731E616E7300F28591 /* FeedObj.swift */; };
 		BA4C17761E616EB500F28591 /* CommentObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C17751E616EB500F28591 /* CommentObj.swift */; };
 		BA4C177D1E616F4600F28591 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C177B1E616F4600F28591 /* FeedCell.swift */; };
@@ -28,6 +41,19 @@
 		BA3F02D11E695B9800D070AC /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		BA3F02D41E6960D900D070AC /* ManualReloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualReloadViewController.swift; sourceTree = "<group>"; };
 		BA3F02D61E6960E500D070AC /* DiffViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffViewController.swift; sourceTree = "<group>"; };
+		BA3F02D91E69625900D070AC /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		BA3F02DA1E69625900D070AC /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		BA3F02DD1E69664600D070AC /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		BA3F02DE1E69664600D070AC /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		BA3F02DF1E69664600D070AC /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		BA3F02E01E69664600D070AC /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		BA3F02E11E69664600D070AC /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		BA3F02E21E69664600D070AC /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
+		BA3F02E31E69664600D070AC /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
+		BA3F02E41E69664600D070AC /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
+		BA3F02E51E69664600D070AC /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
+		BA3F02E61E69664600D070AC /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
+		BA3F02E71E69664600D070AC /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11.jpg; sourceTree = "<group>"; };
 		BA4C17731E616E7300F28591 /* FeedObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedObj.swift; sourceTree = "<group>"; };
 		BA4C17751E616EB500F28591 /* CommentObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentObj.swift; sourceTree = "<group>"; };
 		BA4C177B1E616F4600F28591 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
@@ -65,9 +91,37 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		BA3F02D81E69624A00D070AC /* Item Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F02D91E69625900D070AC /* ItemCell.swift */,
+				BA3F02DA1E69625900D070AC /* ItemCell.xib */,
+			);
+			name = "Item Cell";
+			sourceTree = "<group>";
+		};
+		BA3F02F31E69664800D070AC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F02DD1E69664600D070AC /* 1.jpg */,
+				BA3F02DE1E69664600D070AC /* 2.jpg */,
+				BA3F02DF1E69664600D070AC /* 3.jpg */,
+				BA3F02E01E69664600D070AC /* 4.jpg */,
+				BA3F02E11E69664600D070AC /* 5.jpg */,
+				BA3F02E21E69664600D070AC /* 6.jpg */,
+				BA3F02E31E69664600D070AC /* 7.jpg */,
+				BA3F02E41E69664600D070AC /* 8.jpg */,
+				BA3F02E51E69664600D070AC /* 9.jpg */,
+				BA3F02E61E69664600D070AC /* 10.jpg */,
+				BA3F02E71E69664600D070AC /* 11.jpg */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 		BA4C17721E616E6A00F28591 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				BA3F02D81E69624A00D070AC /* Item Cell */,
 				BA4C17781E616F1900F28591 /* FeedCell */,
 				BA4C17771E616F1400F28591 /* Obj */,
 			);
@@ -112,6 +166,7 @@
 		BA82287F1E5FFE7000E465AC /* Diff */ = {
 			isa = PBXGroup;
 			children = (
+				BA3F02F31E69664800D070AC /* Resource */,
 				BA3F02D31E69609300D070AC /* Controller */,
 				BA4C17721E616E6A00F28591 /* Example */,
 				BA8228921E5FFE8500E465AC /* Diff */,
@@ -194,10 +249,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA3F02ED1E69664600D070AC /* 6.jpg in Resources */,
 				BA82288B1E5FFE7000E465AC /* LaunchScreen.storyboard in Resources */,
+				BA3F02EC1E69664600D070AC /* 5.jpg in Resources */,
+				BA3F02EE1E69664600D070AC /* 7.jpg in Resources */,
 				BA4C177E1E616F4600F28591 /* FeedCell.xib in Resources */,
+				BA3F02EF1E69664600D070AC /* 8.jpg in Resources */,
+				BA3F02E91E69664600D070AC /* 2.jpg in Resources */,
+				BA3F02DC1E69625900D070AC /* ItemCell.xib in Resources */,
+				BA3F02F21E69664600D070AC /* 11.jpg in Resources */,
+				BA3F02E81E69664600D070AC /* 1.jpg in Resources */,
+				BA3F02F01E69664600D070AC /* 9.jpg in Resources */,
+				BA3F02F11E69664600D070AC /* 10.jpg in Resources */,
 				BA8228881E5FFE7000E465AC /* Assets.xcassets in Resources */,
+				BA3F02EB1E69664600D070AC /* 4.jpg in Resources */,
 				BA8228861E5FFE7000E465AC /* Main.storyboard in Resources */,
+				BA3F02EA1E69664600D070AC /* 3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +283,7 @@
 				BA8228961E5FFF2800E465AC /* DiffCalculator.swift in Sources */,
 				BA4C177D1E616F4600F28591 /* FeedCell.swift in Sources */,
 				BA8228941E5FFF1900E465AC /* DiffTransform.swift in Sources */,
+				BA3F02DB1E69625900D070AC /* ItemCell.swift in Sources */,
 				BA3F02D21E695B9800D070AC /* SampleData.swift in Sources */,
 				BA3F02D71E6960E500D070AC /* DiffViewController.swift in Sources */,
 				BA8228811E5FFE7000E465AC /* AppDelegate.swift in Sources */,

@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="114" id="KGk-i7-Jjw" customClass="FeedCell" customModule="Diff" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="419" height="114"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="221" id="KGk-i7-Jjw" customClass="FeedCell" customModule="Diff" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="419" height="221"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="419" height="113.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="419" height="220.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbk-GP-GeC">
@@ -25,26 +25,43 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Comment" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAJ-xz-eza">
-                        <rect key="frame" x="8" y="33" width="403" height="73"/>
+                        <rect key="frame" x="8" y="33" width="403" height="127.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="nIk-o9-l5w">
+                        <rect key="frame" x="0.0" y="168.5" width="411" height="44"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="WnX-ZL-3LV"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="geQ-d0-2dl">
+                            <size key="itemSize" width="44" height="44"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="XAJ-xz-eza" secondAttribute="bottom" constant="7.5" id="9Fo-aX-8LG"/>
                     <constraint firstItem="fbk-GP-GeC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="HG9-cr-nZM"/>
                     <constraint firstItem="fbk-GP-GeC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Pzf-iU-h13"/>
+                    <constraint firstItem="nIk-o9-l5w" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="UwM-EG-ReW"/>
                     <constraint firstItem="XAJ-xz-eza" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="WGu-Sk-TYv"/>
+                    <constraint firstAttribute="bottom" secondItem="nIk-o9-l5w" secondAttribute="bottom" constant="8" id="aAa-Ah-2S0"/>
                     <constraint firstAttribute="trailing" secondItem="XAJ-xz-eza" secondAttribute="trailing" constant="8" id="clR-Bs-Beh"/>
                     <constraint firstItem="XAJ-xz-eza" firstAttribute="top" secondItem="fbk-GP-GeC" secondAttribute="bottom" constant="8" id="hbh-b0-ZJc"/>
+                    <constraint firstItem="nIk-o9-l5w" firstAttribute="top" secondItem="XAJ-xz-eza" secondAttribute="bottom" constant="8" id="vuo-BE-ffz"/>
+                    <constraint firstAttribute="trailing" secondItem="nIk-o9-l5w" secondAttribute="trailing" constant="8" id="xcd-c1-NzD"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="collectionView" destination="nIk-o9-l5w" id="DZs-yo-FzT"/>
                 <outlet property="commentLbl" destination="XAJ-xz-eza" id="peJ-ij-ETz"/>
                 <outlet property="nameLbl" destination="fbk-GP-GeC" id="hrH-8H-ie6"/>
             </connections>
-            <point key="canvasLocation" x="122.5" y="-78"/>
+            <point key="canvasLocation" x="122.5" y="-24.5"/>
         </tableViewCell>
     </objects>
 </document>

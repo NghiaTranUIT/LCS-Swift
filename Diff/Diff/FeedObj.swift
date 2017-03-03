@@ -13,6 +13,7 @@ struct FeedObj {
     
     var title: String!
     var content: String!
+    var images: [String] = []
 }
 
 extension FeedObj {
