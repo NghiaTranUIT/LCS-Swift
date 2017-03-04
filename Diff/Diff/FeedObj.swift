@@ -27,7 +27,7 @@ extension FeedObj {
     static func reallyLargeDataSource() -> [FeedObj] {
         
         var arr: [FeedObj] = []
-        for _ in 0..<10 {
+        for _ in 0..<1 {
             let smallDatas = self.initialData()
             arr = arr + smallDatas
         }
@@ -36,7 +36,7 @@ extension FeedObj {
     
     static func pullNewLargeDataSource() -> [FeedObj] {
         var arr: [FeedObj] = []
-        for _ in 0..<30 {
+        for _ in 0..<1 {
             let smallDatas = self.ramdomNewData()
             arr = arr + smallDatas
         }

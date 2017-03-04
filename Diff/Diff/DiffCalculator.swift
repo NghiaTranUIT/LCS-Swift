@@ -53,9 +53,9 @@ struct DiffCalculator<T: Equatable> {
         let reload = diff.reload.map({ IndexPath(row: $0.index, section: 0) })
         
         // Delete
-        tableView.deleteRows(at: deletion, with: .automatic)
-        tableView.insertRows(at: insertion, with: .automatic)
-        tableView.reloadRows(at: reload, with: .automatic)
+        tableView.deleteRows(at: deletion, with: .none)
+        tableView.insertRows(at: insertion, with: .none)
+        tableView.reloadRows(at: reload, with: .none)
         
         tableView.endUpdates()
     }

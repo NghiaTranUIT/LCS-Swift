@@ -42,7 +42,7 @@ class DiffViewController: UIViewController {
         
         let newData = FeedObj.pullNewLargeDataSource()
         self.feedObjs = newData
-        
+
         // Make Dif and reload
         self.diffCalculator.data = newData
     }
