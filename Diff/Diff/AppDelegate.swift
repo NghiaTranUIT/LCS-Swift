@@ -8,6 +8,13 @@
 
 import UIKit
 
+// Count = loopCount x 10
+let initialDataLoopCount = 1
+
+// Count = loopCount x 7
+let pullRefreshDataLoopCount = 2
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

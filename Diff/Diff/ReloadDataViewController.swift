@@ -12,7 +12,8 @@ class ReloadDataViewController: UIViewController {
 
     //
     // MARK: - Variable
-    fileprivate var feedObjs: [FeedObj] = FeedObj.reallyLargeDataSource()
+    fileprivate var feedObjs: [FeedObj] = FeedObj.reallyLargeDataSource(loopCount: initialDataLoopCount)
+    fileprivate var isPulled = false
     
     //
     // MARK: - Outlet
@@ -35,8 +36,15 @@ class ReloadDataViewController: UIViewController {
     
     @IBAction func refreshBtnTapped(_ sender: Any) {
 
-        self.feedObjs = FeedObj.pullNewLargeDataSource()
+        // New data
+        let newData = !self.isPulled ? FeedObj.pullNewLargeDataSource(loopCount: initialDataLoopCount) :
+                                        FeedObj.reallyLargeDataSource(loopCount: pullRefreshDataLoopCount)
+        self.feedObjs = newData
+        
+        // Force reload
         self.tableView.reloadData()
+        
+        self.isPulled = !self.isPulled
     }
 }
 

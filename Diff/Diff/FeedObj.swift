@@ -24,19 +24,19 @@ class FeedObj {
 
 extension FeedObj {
     
-    static func reallyLargeDataSource() -> [FeedObj] {
+    static func reallyLargeDataSource(loopCount: Int) -> [FeedObj] {
         
         var arr: [FeedObj] = []
-        for _ in 0..<1 {
+        for _ in 0..<loopCount {
             let smallDatas = self.initialData()
             arr = arr + smallDatas
         }
         return arr
     }
     
-    static func pullNewLargeDataSource() -> [FeedObj] {
+    static func pullNewLargeDataSource(loopCount: Int) -> [FeedObj] {
         var arr: [FeedObj] = []
-        for _ in 0..<1 {
+        for _ in 0..<loopCount {
             let smallDatas = self.ramdomNewData()
             arr = arr + smallDatas
         }

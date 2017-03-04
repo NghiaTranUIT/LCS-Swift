@@ -14,7 +14,8 @@ class DiffViewController: UIViewController {
     //
     // MARK: - Variable
     fileprivate var diffCalculator: DiffCalculator<FeedObj>!
-    fileprivate var feedObjs: [FeedObj] = FeedObj.reallyLargeDataSource()
+    fileprivate var feedObjs: [FeedObj] = FeedObj.reallyLargeDataSource(loopCount: initialDataLoopCount)
+    fileprivate var isPulled = false
     
     //
     // MARK: - Outlet
@@ -40,11 +41,14 @@ class DiffViewController: UIViewController {
     
     @IBAction func refreshBtnTapped(_ sender: Any) {
         
-        let newData = FeedObj.pullNewLargeDataSource()
+        // New data
+        let newData = !self.isPulled ? FeedObj.pullNewLargeDataSource(loopCount: initialDataLoopCount) :
+                                        FeedObj.reallyLargeDataSource(loopCount: pullRefreshDataLoopCount)
         self.feedObjs = newData
 
         // Make Dif and reload
         self.diffCalculator.data = newData
+        self.isPulled = !self.isPulled
     }
 
 }

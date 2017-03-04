@@ -12,7 +12,8 @@ class ManualReloadViewController: UIViewController {
 
     //
     // MARK: - Variable
-    fileprivate var feedObjs: [FeedObj] = FeedObj.reallyLargeDataSource()
+    fileprivate var feedObjs: [FeedObj] = FeedObj.reallyLargeDataSource(loopCount: initialDataLoopCount)
+    fileprivate var isPulled = false
     
     //
     // MARK: - Outlet
@@ -35,7 +36,9 @@ class ManualReloadViewController: UIViewController {
     
     @IBAction func refreshBtnTapped(_ sender: Any) {
         
-        let newData = FeedObj.pullNewLargeDataSource()
+        // New data
+        let _ = !self.isPulled ? FeedObj.pullNewLargeDataSource(loopCount: initialDataLoopCount) :
+                                 FeedObj.reallyLargeDataSource(loopCount: pullRefreshDataLoopCount)
         
         /*
         // How we calculate ???
