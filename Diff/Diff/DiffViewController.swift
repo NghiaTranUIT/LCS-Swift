@@ -47,7 +47,10 @@ class DiffViewController: UIViewController {
         self.feedObjs = newData
 
         // Make Dif and reload
+        // MAGIC HERE
         self.diffCalculator.data = newData
+        
+        // Switch
         self.isPulled = !self.isPulled
     }
 

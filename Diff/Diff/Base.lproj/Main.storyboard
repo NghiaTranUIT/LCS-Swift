@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3Q7-jp-cWD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3Q7-jp-cWD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -55,7 +55,7 @@
         <scene sceneID="qF0-Sy-lfE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="37q-gq-2E7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Reload" id="04B-nq-dEq"/>
+                    <tabBarItem key="tabBarItem" title="Reload" image="reload" selectedImage="reload" id="04B-nq-dEq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CDw-tV-kaZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -75,7 +75,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3Q7-jp-cWD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Tas-I8-mbY">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="Tas-I8-mbY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -132,11 +132,11 @@
             </objects>
             <point key="canvasLocation" x="1508" y="685"/>
         </scene>
-        <!--Manual-->
+        <!--Manually-->
         <scene sceneID="8Oe-bh-2nE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CAO-gw-EMr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Manual" id="HAd-Lo-UjK"/>
+                    <tabBarItem key="tabBarItem" title="Manually" image="manually" selectedImage="manually" id="HAd-Lo-UjK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Zu-2o-G8L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -197,7 +197,7 @@
         <scene sceneID="mxX-3B-k64">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zcb-aN-tgP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Diff" id="Dhc-WH-efU"/>
+                    <tabBarItem key="tabBarItem" title="Diff" image="diff" selectedImage="diff" id="Dhc-WH-efU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nnl-fS-34O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -213,4 +213,9 @@
             <point key="canvasLocation" x="790" y="1406"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="diff" width="25" height="25"/>
+        <image name="manually" width="25" height="25"/>
+        <image name="reload" width="25" height="25"/>
+    </resources>
 </document>

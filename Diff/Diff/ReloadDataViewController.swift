@@ -39,11 +39,14 @@ class ReloadDataViewController: UIViewController {
         // New data
         let newData = !self.isPulled ? FeedObj.pullNewLargeDataSource(loopCount: initialDataLoopCount) :
                                         FeedObj.reallyLargeDataSource(loopCount: pullRefreshDataLoopCount)
+        
+        // Set new data
         self.feedObjs = newData
         
         // Force reload
         self.tableView.reloadData()
         
+        // Switch
         self.isPulled = !self.isPulled
     }
 }

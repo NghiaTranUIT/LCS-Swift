@@ -45,9 +45,10 @@ struct DiffCalculator<T: Equatable> {
         
         print("Diff = \(diff)")
         
+        
         tableView.beginUpdates()
         
-        // Map indexPath
+        // 💯 perfect
         let insertion = diff.insertion.map({ IndexPath(row: $0.index, section: 0) })
         let deletion = diff.deletion.map({ IndexPath(row: $0.index, section: 0) })
         let reload = diff.reload.map({ IndexPath(row: $0.index, section: 0) })
